@@ -1,16 +1,37 @@
 /*
-* The logs program, that calculates the amount of logs capable of being in a truck
-* Based on length given.
+* The logs program, that calculates the amount of logs capable of being 
+* in a truck based on length given.
 *
 * @author  Matthew Sanii
 * @version 1.0
 * @since   2021-22-11
 */
 
-let light : Double = 8.988004
-print("Enter mass of object: ")
-let input = readLine()
-if let mass = Double(input!) {
-let energy = light * mass
-print("Potential energy is " , energy , "E16J.")
-} 
+let tries = 0
+let answer = Int.random(in:1..<7)
+print(answer)
+while (true) {
+print("Guess a number from 1 to 6: ")
+let choice = readLine()
+if let guess = Double(choice!) {
+tries = tries + 1
+if (guess == answer) {
+print("You got it right!")
+print("You got it in " , tries , " guesses.")
+break
+}
+else if (guess > 6 || guess < 1) {
+print("That is not in the viable range.")
+}
+else if (guess < answer) {
+print("Too low, try again.")
+}
+else {
+print("Too high, try again.")
+}
+}
+else {
+print("That isn't a viable guess.")
+break
+}
+}
