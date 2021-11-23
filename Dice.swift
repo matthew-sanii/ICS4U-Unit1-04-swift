@@ -10,27 +10,23 @@
 let tries = 0
 let answer = Int.random(in:1..<7)
 print(answer)
-while (true) {
+while true {
 print("Guess a number from 1 to 6: ")
 let choice = readLine()
 if let guess = Double(choice!) {
 tries = tries + 1
-if (guess == answer) {
+if guess == answer {
 print("You got it right!")
-print("You got it in " , tries , " guesses.")
+print("You got it in ",tries," guesses.")
 break
-}
-else if (guess > 6 || guess < 1) {
+} else if guess > 6 || guess < 1 {
 print("That is not in the viable range.")
-}
-else if (guess < answer) {
+} else if guess < answer {
 print("Too low, try again.")
-}
-else {
+} else {
 print("Too high, try again.")
 }
-}
-else {
+} else {
 print("That isn't a viable guess.")
 break
 }
